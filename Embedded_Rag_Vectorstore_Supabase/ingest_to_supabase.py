@@ -1,10 +1,18 @@
 import os
 import json
+from dotenv import load_dotenv
 from supabase import create_client, Client
 
+# Load environment variables
+load_dotenv()
+
 # Set your Supabase credentials here or via environment variables
-SUPABASE_URL = "https://ompjkiiabyuegytncbwq.supabase.co"
-SUPABASE_SERVICE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9tcGpraWlhYnl1ZWd5dG5jYndxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1Mjg0ODYyNiwiZXhwIjoyMDY4NDI0NjI2fQ.0DQ_g_h7vM4TVxgGFj2u38XXomdZ2YvwfNzJ0B3KfE4"
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_SERVICE_KEY = os.getenv("SUPABASE_SERVICE_KEY")
+
+# Validate required environment variables
+if not all([SUPABASE_URL, SUPABASE_SERVICE_KEY]):
+    raise ValueError("Missing required environment variables. Please check your .env file.")
 
 def main():
     # Load embedded chunks

@@ -1,10 +1,18 @@
 import os
+from dotenv import load_dotenv
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from openai import OpenAI
 import tiktoken
 
+# Load environment variables
+load_dotenv()
+
 # Set your OpenAI API key here or via environment variable
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
+# Validate required environment variables
+if not OPENAI_API_KEY:
+    raise ValueError("Missing OPENAI_API_KEY environment variable. Please check your .env file.")
 
 # Files to process
 FILES = [

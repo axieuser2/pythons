@@ -1,12 +1,20 @@
 import os
 import json
+from dotenv import load_dotenv
 from openai import OpenAI
 from supabase import create_client, Client
 
+# Load environment variables
+load_dotenv()
+
 # Set your API keys and Supabase details here or via environment variables
-OPENAI_API_KEY = "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"
-SUPABASE_URL = "https://ompjkiiabyuegytncbwq.supabase.co"
-SUPABASE_SERVICE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9tcGpraWlhYnl1ZWd5dG5jYndxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1Mjg0ODYyNiwiZXhwIjoyMDY4NDI0NjI2fQ.0DQ_g_h7vM4TVxgGFj2u38XXomdZ2YvwfNzJ0B3KfE4"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_SERVICE_KEY = os.getenv("SUPABASE_SERVICE_KEY")
+
+# Validate required environment variables
+if not all([OPENAI_API_KEY, SUPABASE_URL, SUPABASE_SERVICE_KEY]):
+    raise ValueError("Missing required environment variables. Please check your .env file.")
 
 # Initialize clients
 openai_client = OpenAI(api_key=OPENAI_API_KEY)
