@@ -1,0 +1,8 @@
+2. 🛠 Våra Tjänster – Snabb Översikt
+Axie Studio erbjuder helhetslösningar för:
+- 🌐 Webbplatser (SEO, säkerhet, responsivitet)
+- 📱 Mobilappar (native-känsla, snabb publicering)
+- 📅 Bokningssystem (automatisk schemaläggning, CRM)
+- 🛒 E-handel (betalningar, lager, marknadsföring)
+
+Allt är skräddarsytt, skalbart och integrerbart.

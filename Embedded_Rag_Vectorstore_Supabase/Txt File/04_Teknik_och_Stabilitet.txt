@@ -1,0 +1,8 @@
+4. ⚙️ Teknik & Stabilitet
+Axie Studio bygger på:
+- 99.9% drifttid
+- Skalbar arkitektur
+- En kodbas för appar (snabbare utveckling, lägre kostnad)
+- Modern teknik med hög säkerhet
+
+Vi levererar robusta och framtidssäkra lösningar!
